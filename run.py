@@ -89,8 +89,8 @@ with open('./input/sentences_nlp352.txt') as textlines:
     # Look for lines containing V mineral names, location, or age information
     for line in textlines.readlines():
         # Clean up the input
-        sline = line.lower().split('\t')	
-        tL = re.sub('[{}"]', '', sline[6])
+        sline = line.lower().split('\t')
+        tL = re.sub('[{}"]\'', '', sline[6])
         tLL = re.sub(r',,,', ',;,', tL)
         # create an array of lemmas
         lemmas = tLL.split(',') #get rid of {}",,, in the raw texts
